@@ -1,0 +1,130 @@
+     //    var array = result1?.data?.transferCoverPageModelCollection?.items;
+
+        //    #region switch      
+
+        //    switch (collection)
+        //    {
+        //        case "transferTooltipModelCollection":
+        //            array = result1?.data?.transferTooltipModelCollection?.items;
+        //            break;
+        //        case "transferThankYouAndMasterPageModelCollection":
+        //            array = result1?.data?.transferThankYouAndMasterPageModelCollection?.items;
+        //            break;
+        //        case "transferCoverPageModelCollection":
+        //            array = result1?.data?.transferCoverPageModelCollection?.items;
+        //            break;
+        //        case "transferSummaryOneModelCollection":
+        //            array = result1?.data?.transferSummaryOneModelCollection?.items;
+        //            break;
+        //        case "transferSummaryTwoModelCollection":
+        //            array = result1?.data?.transferSummaryTwoModelCollection?.items;
+        //            break;
+        //        case "lifeEventsConfirmationPageModelCollection":
+        //            array = result1?.data?.lifeEventsConfirmationPageModelCollection?.items;
+        //            break;
+        //        case "transferThankYouAndMasterPageTwoModelCollection":
+        //            array = result1?.data?.transferThankYouAndMasterPageTwoModelCollection?.items;
+        //            break;
+        //        case "lifeEventsReviewCoverPageModelCollection":
+        //            array = result1?.data?.lifeEventsReviewCoverPageModelCollection?.items;
+        //            break;
+        //        case "lifeEventsReviewPageModelCollection":
+        //            array = result1?.data?.lifeEventsReviewPageModelCollection?.items;
+        //            break;
+        //        case "lifeEventsWelcomePageModelCollection":
+        //            array = result1?.data?.lifeEventsWelcomePageModelCollection?.items;
+        //            break;
+        //        case "lifeEventsCoverPageModelCollection":
+        //            array = result1?.data?.lifeEventsCoverPageModelCollection?.items;
+        //            break;
+
+        //        case "lifeEventsContactDetailsPageModelCollection":
+        //            array = result1?.data?.lifeEventsContactDetailsPageModelCollection?.items;
+        //            break;
+        //        case "lifeEventsEligibilityPageModelCollection":
+        //            array = result1?.data?.lifeEventsEligibilityPageModelCollection?.items;
+        //            break;
+        //        case "cancelReviewPageModelCollection":
+        //            array = result1?.data?.cancelReviewPageModelCollection?.items;
+        //            break;
+        //        case "cancelThankYouPageModelCollection":
+        //            array = result1?.data?.cancelThankYouPageModelCollection?.items;
+        //            break;
+        //        case "cancelCoverPageModelCollection":
+        //            array = result1?.data?.cancelCoverPageModelCollection?.items;
+        //            break;
+
+        //        //apply
+        //        case "applyWarningsAgreementsModelCollection":
+        //            array = result1?.data?.applyWarningsAgreementsModelCollection?.items;
+        //            break;
+        //        case "applyReviewAndSummaryModel_1_2Collection":
+        //            array = result1?.data?.applyReviewAndSummaryModel_1_2Collection?.items;
+        //            break;
+        //        case "applyWelcomePageModelCollection":
+        //            array = result1?.data?.applyWelcomePageModelCollection?.items;
+        //            break;
+        //        case "applyConfirmationAndReferralModelCollection":
+        //            array = result1?.data?.applyConfirmationAndReferralModelCollection?.items;
+        //            break;
+        //        case "applyChooseQuickCoverModelCollection":
+        //            array = result1?.data?.applyChooseQuickCoverModelCollection?.items;
+        //            break;
+        //        case "applyReviewAndSummaryModelCollection":
+        //            array = result1?.data?.applyReviewAndSummaryModelCollection?.items;
+        //            break;
+        //        case "applyTeleRequestAndExclusionModelCollection":
+        //            array = result1?.data?.applyTeleRequestAndExclusionModelCollection?.items;
+        //            break;
+
+        //        case "applyInterviewsAndIneligibleModelCollection":
+        //            array = result1?.data?.applyInterviewsAndIneligibleModelCollection?.items;
+        //            break;
+        //        case "applyChooseTailoredCoverModelCollection":
+        //            array = result1?.data?.applyChooseTailoredCoverModelCollection?.items;
+        //            break;
+        //        case "applyMasterPageModelCollection":
+        //            array = result1?.data?.applyMasterPageModelCollection?.items;
+        //            break;
+        //        case "transferTestModelCollection":
+        //            array = result1?.data?.transferTestModelCollection?.items;
+        //            break;
+        //    }
+        //    #endregion
+        //    if (array == null)
+        //        throw new Exception(str1);
+
+
+        //    foreach (var s in array)
+        //    {
+        //        var dictionary = new Dictionary<string, object>();
+        //        foreach (PropertyDescriptor propertyDescriptor in TypeDescriptor.GetProperties(s))
+        //        {
+        //            object obj = propertyDescriptor.GetValue(s);
+        //            dictionary.Add(propertyDescriptor.Name, obj);
+
+        //            string name = propertyDescriptor.Name.Replace(">k__BackingField", "");
+
+        //            var model = new ContentDisplayModelItem
+        //            {
+        //                Environment = env,
+        //                CollectionName = collection,
+        //                FieldName = name,
+        //                FieldValue = propertyDescriptor.GetValue(s),
+        //                FundName = viewModel.ViewModelData.Select(x => x.FieldName).Contains(name) ? "Aware" : "GPM"
+        //            };
+        //            viewModel.ViewModelData.Add(model);
+
+        //        }
+        //    }
+
+        //}
+        //catch (Exception ex)
+        //{
+        //    viewModel.Error = ex.Message;
+        //    viewModel.Status = 1;
+        //}
+        //return viewModel;
+
+        //var result = JsonConvert.DeserializeObject<GraphqlResponseModel>(str);
+        //return result;

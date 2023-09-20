@@ -1,0 +1,350 @@
+using System.Data;
+using ContentFulComparisionTool.Builder;
+using ContentFulComparisionTool.Models;
+using ContentFulComparisionTool.Services.ContentFulFactory;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using ContentDisplayModelItem = GraphQL.Client.Http.ContentDisplayModelItem;
+using ContentViewModel = GraphQL.Client.Http.CFContentViewModel;
+
+namespace ContentFulComparisionTool;
+
+public partial class ContenfulViewer : Form
+{
+    public bool bToggle = false;
+    private readonly DataGridView _contentFulGridView = new DataGridView();
+    public ContenfulViewer()
+    {
+        InitializeComponent();
+        //Get contenttypes
+
+        GetContentModel.GetContentModelAsync("Dev");
+        GetContentModel.GetContentModelAsync("UAT");
+        // Set List view styles.
+        if (env_dropdown.Text.Equals(""))
+            collection_dropdown.Enabled = false;
+        listView1.View = View.Details;
+        listView1.Sort();
+        listView1.Columns.Add("ContentId", listView1.Width / 6);
+        listView1.Columns.Add("Cbus", listView1.Width / 3);
+        listView1.Columns.Add("Aware", listView1.Width / 3);
+        listView1.Columns.Add("GPM", listView1.Width / 3);
+        listView1.Columns.Add("Environment", listView1.Width / 8);
+        Controls.Add(_contentFulGridView);
+
+        dataGridView1.ColumnCount = 5;
+
+        dataGridView1.Columns[0].Name = "Field Name";
+        dataGridView1.Columns[1].Name = "CBus";
+        dataGridView1.Columns[2].Name = "Aware";
+        dataGridView1.Columns[3].Name = "GPM";
+        dataGridView1.Columns[4].Name = "Environment";
+
+
+
+    }
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Get content  Data after selecting Collection ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    private async void CollectionSelectedIndexChangedAsync(object sender, EventArgs e)
+    {
+        var collectionname = collection_dropdown.Text.ToLower().Replace("collection", "");
+        var flds = GetContentModel.SchemaDataDev.Where(x => x.ContentModel.ToLower().Contains(collectionname)).Select(x => x.Fields).FirstOrDefault();
+        comboBox1.Items.Clear();
+        if (flds != null)
+        {
+            foreach (string field in flds)
+                comboBox1.Items.Add(field);
+        }
+        await GetContentfulDataAsync();
+    }
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Get Data after selecting Envrionment ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    private async void ComboBox2_SelectedIndexChangedAsync(object sender, EventArgs e)
+    {
+
+        if (env_dropdown.Text.Length > 0)
+            collection_dropdown.Enabled = true;
+
+        if (collection_dropdown.Text.Length > 0)
+        {
+            await GetContentfulDataAsync();
+        }
+    }
+
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ GetContentfulDataAsync  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    public async Task GetContentfulDataAsync()
+    {
+        //Execute qeruy     && update UI
+
+        var graphQLResponse1 = await GetContentUsingGraphQL.ExecuteQueryAsync(env_dropdown.Text, collection_dropdown.Text, "AwareSuper");
+
+
+        var graphQLResponse2 = await GetContentUsingGraphQL.ExecuteQueryAsync(env_dropdown.Text, collection_dropdown.Text, "CBU");
+        if (graphQLResponse2.Status == 1)
+        {
+            var noOfFields = graphQLResponse1.ViewModelData.Select(x => x.FieldName).Distinct().ToList();
+
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
+            foreach (string fldName in noOfFields)
+            {
+                var obj = new GraphQL.Client.Http.ContentDisplayModelItem
+                {
+                    FundName = "CBU",
+                    Environment = "UAT",
+                    FieldName = fldName,
+                    FieldValue = ""
+
+                };
+                graphQLResponse1.ViewModelData.Add(obj);
+            }
+#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
+        }
+        var graphQLResponse3 = await GetContentUsingGraphQL.ExecuteQueryAsync(env_dropdown.Text, collection_dropdown.Text, "asg");
+        graphQLResponse1.ViewModelData.AddRange(graphQLResponse2.ViewModelData);
+        graphQLResponse1.ViewModelData.AddRange(graphQLResponse3.ViewModelData);
+        UpdateUI(graphQLResponse1);
+    }
+
+    //v~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Update UI ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    private void UpdateUI(ContentViewModel graphQLResponse)
+    {
+        if (graphQLResponse.Status == 1)
+        {
+            string ErrorText = "Error:";
+            ErrorText += graphQLResponse.Error;
+            ErrorText += "\n";
+            richTextBox1.Text = ErrorText;
+            var parsedJson = JToken.Parse(graphQLResponse.Error);
+            var beautified = parsedJson.ToString(Formatting.Indented);
+            var minified = parsedJson.ToString(Formatting.Indented);
+            richTextBox1.Text = minified;
+
+            return;
+        }
+        var fields = graphQLResponse.ViewModelData.Select(x => x.FieldName).Distinct();
+
+        foreach (var field in fields)
+        {
+            string? fieldname = field;
+            string? cbus_dev = "", cbus_uat = "", aware_dev = "", aware_uat = "";
+            string? column4_dev = "", gpm_uat = "";
+
+
+
+#pragma warning disable CS8629 // Nullable value type may be null.
+            var content = graphQLResponse.ViewModelData.Where(x => (bool)(x.FieldName?.Equals(field))).Select(x => x).ToList();
+            AddDatatoGridDev(content,"Development");
+            if (env_dropdown.Text.ToLower().Equals("development") || env_dropdown.Text.ToLower().Contains("all"))
+            {
+                aware_dev = content?.Where(x => x.FundName.Equals("CBU") && x.Environment.Equals("Development")).Select(x => x.FieldValue).FirstOrDefault();
+                cbus_dev = content?.Where(x => x.FundName.Equals("AwareSuper") && x.Environment.Equals("Development")).Select(x => x.FieldValue).FirstOrDefault();
+                column4_dev = content?.Where(x => x.FundName.Equals("asg") && x.Environment.Equals("Development")).Select(x => x.FieldValue).FirstOrDefault();
+
+                if (fieldname != null && cbus_dev != null && aware_dev != null)
+#pragma warning disable IDE0058 // Expression value is never used
+#pragma warning disable CS8601 // Possible null reference assignment.
+                    listView1.Items.Add(new ListViewItem(new string[] { fieldname, cbus_dev, aware_dev, column4_dev, EnvironmentEnum.Development.ToString() }));
+
+            }
+
+
+            if (env_dropdown.Text.ToLower().Equals("uat") || env_dropdown.Text.ToLower().Contains("all"))
+            {
+                cbus_uat = content?.Where(x => x.FundName.Equals("CBU") && x.Environment.Equals("UAT")).Select(x => x.FieldValue).FirstOrDefault();
+                aware_uat = content?.Where(x => x.FundName.Equals("AwareSuper") && x.Environment.Equals("UAT")).Select(x => x.FieldValue).FirstOrDefault();
+                gpm_uat = content?.Where(x => x.FundName.Equals("asg") && x.Environment.Equals("UAT")).Select(x => x.FieldValue).FirstOrDefault();
+
+                bool bDiffernt = false;
+
+                //if ((bool)!aware_dev?.Equals(aware_uat))
+                //    bDiffernt = true;
+
+                if (fieldname != null && cbus_uat != null && aware_uat != null)
+                {
+#pragma warning disable CS8601 // Possible null reference assignment.
+                    var li = new ListViewItem(new string[] { fieldname, cbus_uat, aware_uat, gpm_uat, EnvironmentEnum.UAT.ToString() });
+
+                    if (bDiffernt)
+                        li.BackColor = Color.Yellow;
+                    listView1.Items.Add(li);
+                }
+            }
+            if (cbus_uat == null && env_dropdown.Text.ToLower().Contains("all"))
+            {
+                cbus_uat = "";
+                richTextBox1.AppendText("\nField does not exist in " + fieldname);
+            }
+
+            if (aware_uat == null && env_dropdown.Text.ToLower().Contains("all"))
+            {
+                aware_uat = "";
+                richTextBox1.AppendText("\nField does not exist in " + fieldname);
+            }
+
+            if (cbus_dev == null && env_dropdown.Text.ToLower().Contains("all"))
+
+            {
+                cbus_dev = "";
+                richTextBox1.AppendText("\nField does not exist in " + fieldname);
+            }
+            if (aware_dev == null && env_dropdown.Text.ToLower().Contains("all"))
+            {
+                aware_dev = "";
+                richTextBox1.AppendText("\nField does not exist in " + fieldname);
+            }
+        }
+    }
+
+    private void AddDatatoGridDev(List<ContentDisplayModelItem> content, string environment)
+    {
+#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
+        if (content != null)
+        {
+            string fieldName = content.Select(x => x.FieldName).FirstOrDefault();
+
+            string? cbus_dev = "", aware_dev = "";
+            string? gpm_dev = "";
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+            aware_dev = content?.Where(x => x.FundName.Equals("CBU") && x.Environment.Equals("Development")).Select(x => x.FieldValue).FirstOrDefault();
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+            cbus_dev = content?.Where(x => x.FundName.Equals("AwareSuper") && x.Environment.Equals("Development")).Select(x => x.FieldValue).FirstOrDefault();
+#pragma warning restore CS8602 // Dereference of a possibly null reference.
+#pragma warning disable CS8602 // Dereference of a possibly null reference.
+            gpm_dev = content?.Where(x => x.FundName.Equals("asg") && x.Environment.Equals("Development")).Select(x => x.FieldValue).FirstOrDefault();
+
+            dataGridView1.Rows.Add(fieldName, cbus_dev, aware_dev, gpm_dev, environment);
+        }
+    }
+
+    //-------------------------------------------------------------------------------
+    private void UpdateUI_Filter(ContentViewModel graphQLResponse)
+    {
+        foreach (var obj in graphQLResponse.ViewModelData)
+        {
+            //bool bDiffernt = false;
+            string? fundname = obj?.FundName;
+            string? fieldname = obj?.FieldName;
+            string? fieldvalue = obj?.FieldValue;
+            var fieldname_filter = comboBox1.Text;
+            if (fieldname_filter.ToLower().Equals(obj?.FieldName?.ToLower()))
+            {
+
+                if (fundname != null && !fundname.Equals("Aware") && fieldname != null && fieldvalue != null)
+                {
+                    listView1.Items.Add(new ListViewItem(new string[] { fieldname, fieldvalue, "" }));
+
+                }
+                else if (fundname != null && fieldname != null && fieldvalue != null)
+                {
+                    var li = new ListViewItem(new string[] { fieldname, "", fieldvalue });
+                    listView1.Items.Add(li);
+                }
+            }
+        }
+    }
+    private void listView1_MouseClick(object sender, MouseEventArgs e)
+    {
+        if (e.Button == MouseButtons.Right)
+        {
+            var focusedItem = listView1.FocusedItem;
+            if (focusedItem != null && focusedItem.Bounds.Contains(e.Location))
+            {
+                menuStrip1.Show();
+            }
+        }
+    }
+    private void Reset(object sender, EventArgs e)
+    {
+        listView1.Items.Clear();
+        richTextBox1.Text = "";
+        env_dropdown.Text = "";
+        collection_dropdown.Text = "";
+        comboBox1.Text = "";
+    }
+
+    private async void ComboBox1_SelectedIndexChangedAsync(object sender, EventArgs e)
+    {
+        //filter data.
+#pragma warning disable CS8604 // Possible null reference argument.
+        var respone = await GetContentModel.GetContentsAsync(collection_dropdown?.Text, env_dropdown.Text);
+#pragma warning restore CS8604 // Possible null reference argument.
+        listView1.Items.Clear();
+        var graphQLResponse = await GetContentUsingGraphQL.ExecuteQueryAsync(env_dropdown.Text, collection_dropdown.Text, "CBU");
+        UpdateUI_Filter(graphQLResponse);
+
+    }
+
+    private void radioButton2_CheckedChanged(object sender, EventArgs e)
+    {
+        if (collection_dropdown.Text.Equals(""))
+        {
+            MessageBox.Show("Select Collection");
+            return;
+        }
+        var value1 = CompareContentModels.GetFieldsInUATAndNotInDev(collection_dropdown.Text);
+        var value2 = CompareContentModels.GetFieldsInDevAndNotInUat(collection_dropdown.Text);
+        var collectionName = collection_dropdown.Text.Replace("Collection", "").ToLower();
+        var noOfFields = GetContentModel.SchemaDataDev.Where(x => x.ContentModel.ToLower().Equals(collectionName)).Select(x => x.Fields).FirstOrDefault();
+        if (value1?.Count == 0 && value2?.Count == 0)
+            MessageBox.Show("No of Fields in UAT and Dev are same && Total fields are " + noOfFields?.Count);
+
+        if (value1?.Count != 0 || value2?.Count != 0)
+            MessageBox.Show("No of Fields in UAT and Dev are not same  && Total fields are " +
+                "\n" + "Fields in Dev and not in UAT " + value2 + "\n"
+                + "Fields in Uat and not in Dev" + value1);
+
+    }
+    private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        var collectionnames = GetContentModel.SchemaDataDev.Where(x => x.ContentModel.Contains(comboBox2.Text)).Select(x => x.ContentModel).ToList();
+        collection_dropdown.Items.Clear();
+        if (collectionnames != null)
+        {
+            foreach (string colelction in collectionnames)
+            {
+                string value = char.ToLowerInvariant(colelction[0]) + colelction.Substring(1) + "Collection";
+                collection_dropdown.Items.Add(value);
+            }
+        }
+
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+        if (bToggle)
+        {
+            bToggle = false;
+            listView1.View = View.Details;
+            return;
+        }
+
+        if (!bToggle)
+        {
+            bToggle = true;
+            listView1.View = View.List;
+        }
+    }
+
+    private void contextMenuStrip1_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+    {
+        var popup = new PopupForm();
+        popup.SelectedValues(collection_dropdown.Text);
+        DialogResult dialogresult = popup.ShowDialog();
+        if (dialogresult == DialogResult.OK)
+        {
+
+            Console.WriteLine("You clicked OK");
+        }
+        else if (dialogresult == DialogResult.Cancel)
+        {
+            Console.WriteLine("You clicked either Cancel or X button in the top right corner");
+        }
+        popup.Dispose();
+    }
+
+    private void ContentFulGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    {
+
+    }
+}

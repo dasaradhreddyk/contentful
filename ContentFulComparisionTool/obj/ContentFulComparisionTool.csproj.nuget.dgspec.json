@@ -1,0 +1,606 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Repos\\Comparisonful\\ContentFulComparisionTool\\ContentFulComparisionTool.csproj": {}
+  },
+  "projects": {
+    "C:\\Repos\\Comparisonful\\ContentFulComparisionTool\\ContentFulComparisionTool.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Repos\\Comparisonful\\ContentFulComparisionTool\\ContentFulComparisionTool.csproj",
+        "projectName": "ContentFulComparisionTool",
+        "projectPath": "C:\\Repos\\Comparisonful\\ContentFulComparisionTool\\ContentFulComparisionTool.csproj",
+        "packagesPath": "C:\\Users\\KevinPurnama\\.nuget\\packages\\",
+        "outputPath": "C:\\Repos\\Comparisonful\\ContentFulComparisionTool\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KevinPurnama\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {
+              "C:\\Repos\\Comparisonful\\examples\\GraphQL.Client.Example\\GraphQL.Client.Example.csproj": {
+                "projectPath": "C:\\Repos\\Comparisonful\\examples\\GraphQL.Client.Example\\GraphQL.Client.Example.csproj"
+              },
+              "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Serializer.Newtonsoft\\GraphQL.Client.Serializer.Newtonsoft.csproj": {
+                "projectPath": "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Serializer.Newtonsoft\\GraphQL.Client.Serializer.Newtonsoft.csproj"
+              },
+              "C:\\Repos\\Comparisonful\\src\\GraphQL.Client\\GraphQL.Client.csproj": {
+                "projectPath": "C:\\Repos\\Comparisonful\\src\\GraphQL.Client\\GraphQL.Client.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Microsoft.AspNetCore.Http.Extensions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.CSharp": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "contentful.csharp": {
+              "target": "Package",
+              "version": "[7.2.12, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Repos\\Comparisonful\\examples\\GraphQL.Client.Example\\GraphQL.Client.Example.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Repos\\Comparisonful\\examples\\GraphQL.Client.Example\\GraphQL.Client.Example.csproj",
+        "projectName": "GraphQL.Client.Example",
+        "projectPath": "C:\\Repos\\Comparisonful\\examples\\GraphQL.Client.Example\\GraphQL.Client.Example.csproj",
+        "packagesPath": "C:\\Users\\KevinPurnama\\.nuget\\packages\\",
+        "outputPath": "C:\\Repos\\Comparisonful\\examples\\GraphQL.Client.Example\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KevinPurnama\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "targetAlias": "netcoreapp3.0",
+            "projectReferences": {
+              "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Serializer.Newtonsoft\\GraphQL.Client.Serializer.Newtonsoft.csproj": {
+                "projectPath": "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Serializer.Newtonsoft\\GraphQL.Client.Serializer.Newtonsoft.csproj"
+              },
+              "C:\\Repos\\Comparisonful\\src\\GraphQL.Client\\GraphQL.Client.csproj": {
+                "projectPath": "C:\\Repos\\Comparisonful\\src\\GraphQL.Client\\GraphQL.Client.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "targetAlias": "netcoreapp3.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.0.1, 3.0.1]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.0.3, 3.0.3]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Abstractions.Websocket\\GraphQL.Client.Abstractions.Websocket.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Abstractions.Websocket\\GraphQL.Client.Abstractions.Websocket.csproj",
+        "projectName": "GraphQL.Client.Abstractions.Websocket",
+        "projectPath": "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Abstractions.Websocket\\GraphQL.Client.Abstractions.Websocket.csproj",
+        "packagesPath": "C:\\Users\\KevinPurnama\\.nuget\\packages\\",
+        "outputPath": "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Abstractions.Websocket\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\KevinPurnama\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Abstractions\\GraphQL.Client.Abstractions.csproj": {
+                "projectPath": "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Abstractions\\GraphQL.Client.Abstractions.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Abstractions\\GraphQL.Client.Abstractions.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Abstractions\\GraphQL.Client.Abstractions.csproj",
+        "projectName": "GraphQL.Client.Abstractions",
+        "projectPath": "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Abstractions\\GraphQL.Client.Abstractions.csproj",
+        "packagesPath": "C:\\Users\\KevinPurnama\\.nuget\\packages\\",
+        "outputPath": "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Abstractions\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "C:\\Users\\KevinPurnama\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "C:\\Repos\\Comparisonful\\src\\GraphQL.Primitives\\GraphQL.Primitives.csproj": {
+                "projectPath": "C:\\Repos\\Comparisonful\\src\\GraphQL.Primitives\\GraphQL.Primitives.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Serializer.Newtonsoft\\GraphQL.Client.Serializer.Newtonsoft.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Serializer.Newtonsoft\\GraphQL.Client.Serializer.Newtonsoft.csproj",
+        "projectName": "GraphQL.Client.Serializer.Newtonsoft",
+        "projectPath": "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Serializer.Newtonsoft\\GraphQL.Client.Serializer.Newtonsoft.csproj",
+        "packagesPath": "C:\\Users\\KevinPurnama\\.nuget\\packages\\",
+        "outputPath": "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Serializer.Newtonsoft\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "C:\\Users\\KevinPurnama\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Abstractions.Websocket\\GraphQL.Client.Abstractions.Websocket.csproj": {
+                "projectPath": "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Abstractions.Websocket\\GraphQL.Client.Abstractions.Websocket.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Repos\\Comparisonful\\src\\GraphQL.Client\\GraphQL.Client.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Repos\\Comparisonful\\src\\GraphQL.Client\\GraphQL.Client.csproj",
+        "projectName": "GraphQL.Client",
+        "projectPath": "C:\\Repos\\Comparisonful\\src\\GraphQL.Client\\GraphQL.Client.csproj",
+        "packagesPath": "C:\\Users\\KevinPurnama\\.nuget\\packages\\",
+        "outputPath": "C:\\Repos\\Comparisonful\\src\\GraphQL.Client\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "C:\\Users\\KevinPurnama\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net461",
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net461": {
+            "targetAlias": "net461",
+            "projectReferences": {
+              "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Abstractions.Websocket\\GraphQL.Client.Abstractions.Websocket.csproj": {
+                "projectPath": "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Abstractions.Websocket\\GraphQL.Client.Abstractions.Websocket.csproj"
+              },
+              "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Abstractions\\GraphQL.Client.Abstractions.csproj": {
+                "projectPath": "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Abstractions\\GraphQL.Client.Abstractions.csproj"
+              }
+            }
+          },
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Abstractions.Websocket\\GraphQL.Client.Abstractions.Websocket.csproj": {
+                "projectPath": "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Abstractions.Websocket\\GraphQL.Client.Abstractions.Websocket.csproj"
+              },
+              "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Abstractions\\GraphQL.Client.Abstractions.csproj": {
+                "projectPath": "C:\\Repos\\Comparisonful\\src\\GraphQL.Client.Abstractions\\GraphQL.Client.Abstractions.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net461": {
+          "targetAlias": "net461",
+          "dependencies": {
+            "Microsoft.CSharp": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.3, )"
+            },
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "System.Net.WebSockets.Client.Managed": {
+              "target": "Package",
+              "version": "[1.0.22, )"
+            },
+            "System.Reactive": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        },
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Microsoft.CSharp": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.3, )"
+            },
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "System.Reactive": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Repos\\Comparisonful\\src\\GraphQL.Primitives\\GraphQL.Primitives.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Repos\\Comparisonful\\src\\GraphQL.Primitives\\GraphQL.Primitives.csproj",
+        "projectName": "GraphQL.Primitives",
+        "projectPath": "C:\\Repos\\Comparisonful\\src\\GraphQL.Primitives\\GraphQL.Primitives.csproj",
+        "packagesPath": "C:\\Users\\KevinPurnama\\.nuget\\packages\\",
+        "outputPath": "C:\\Repos\\Comparisonful\\src\\GraphQL.Primitives\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "C:\\Users\\KevinPurnama\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "noWarn": [
+            "NU5105"
+          ],
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Microsoft.SourceLink.GitHub": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

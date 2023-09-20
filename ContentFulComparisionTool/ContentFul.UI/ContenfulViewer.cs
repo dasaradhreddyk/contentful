@@ -1,10 +1,9 @@
 using System.Data;
-using System.Windows.Forms;
 using ContentFulComparisionTool.Builder;
-using ContentFulComparisionTool.ContentFul.Builder;
 using ContentFulComparisionTool.ContentFul.Core.Exceptions;
 using ContentFulComparisionTool.Models;
 using ContentFulComparisionTool.Services.ContentFulFactory;
+using ContentFulComparisionTool.ContentFul.Core.ReportGenerator.PostToTeams;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using ContentDisplayModelItem = GraphQL.Client.Http.ContentDisplayModelItem;
@@ -451,8 +450,8 @@ public partial class ContenfulViewer : Form
 
     }
 
-    private void btnNotifyTeams_Click(object sender, EventArgs e)
+    private async void btnNotifyTeams_ClickAsync(object sender, EventArgs e)
     {
-
+        var result = await PostReportForContentChangesToTeams.PostReportForContentChangesToTeamsAsync();
     }
 }

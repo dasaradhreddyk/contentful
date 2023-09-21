@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class PostTeamsComponent {
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get(baseUrl + 'teams').subscribe(result => {
+    http.post(baseUrl + 'weatherforecast', '').subscribe(result => {
       console.log(JSON.stringify(result));  
     }, error => console.error(error));
   }

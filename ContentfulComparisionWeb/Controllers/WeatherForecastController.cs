@@ -1,4 +1,5 @@
 ﻿using ContentfulComparisionWeb.Builder;
+using ContentfulComparisionWeb.ContentFul.Core.ReportGenerator.PostToTeams;
 using ContentfulComparisionWeb.Services.ContentFulFactory;
 using GraphQL.Client.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -46,6 +47,13 @@ namespace ContentfulComparisionWeb.Controllers
         public async  Task<CFContentViewModel> GetContentfulData()
         {
             return  await GetContentUsingGraphQL.ExecuteQueryAsync("Development", "transferCoverPageCollection", "awr", "AwareSuper");
+        }
+
+
+        [HttpPost]
+        public async Task<string> Post() {
+            var response = await PostReportForContentChangesToTeams.PostReportForContentChangesToTeamsAsync();
+            return "success";
         }
     }
 }

@@ -49,7 +49,7 @@ internal static class PostReportForContentChangesToTeams
                 ""name"": ""View Report"",
                 ""targets"": [{
                     ""os"": ""default"",
-                    ""uri"": ""https://sep2023hackathon.blob.core.windows.net/reports/Result.pdf?sp=r&st=2023-09-21T00:09:08Z&se=2023-09-30T08:09:08Z&spr=https&sv=2022-11-02&sr=b&sig=t%2BdaBldbJXec%2B21%2Fy9rf9Ad6jU%2FCZMKkuwnIMU8QDW4%3D%22%22""
+                    ""uri"": ""https://sep2023hackathon.blob.core.windows.net/reports/Result.pdf?sp=r&st=2023-09-21T00:09:08Z&se=2023-09-30T08:09:08Z&spr=https&sv=2022-11-02&sr=b&sig=t%2BdaBldbJXec%2B21%2Fy9rf9Ad6jU%2FCZMKkuwnIMU8QDW4%3D""
                 }]
             }, {
                 ""@type"": ""ActionCard"",

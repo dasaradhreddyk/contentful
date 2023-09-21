@@ -18,8 +18,8 @@ namespace ContentfulComparisionWeb.Controllers
             _logger = logger;
         }
 
-        [HttpPost]
-        public async Task Post()
+        [HttpGet]
+        public async Task Get()
         {
            var response =  await PostReportForContentChangesToTeams.PostReportForContentChangesToTeamsAsync();
         }

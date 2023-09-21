@@ -377,7 +377,7 @@ partial class ContenfulViewer
         btnNotifyTeams.TabIndex = 18;
         btnNotifyTeams.Text = "Post";
         btnNotifyTeams.UseVisualStyleBackColor = true;
-        btnNotifyTeams.Click += btnNotifyTeams_Click;
+        btnNotifyTeams.Click += btnNotifyTeams_ClickAsync;
         // 
         // label8
         // 

@@ -40,3 +40,17 @@ C:\Repos\src\GraphQL.Client.Abstractions\obj\Debug\netstandard2.0\GraphQL.Client
 C:\Repos\src\GraphQL.Client.Abstractions\obj\Debug\netstandard2.0\GraphQL.Client.Abstractions.csproj.CopyComplete
 C:\Repos\src\GraphQL.Client.Abstractions\obj\Debug\netstandard2.0\GraphQL.Client.Abstractions.dll
 C:\Repos\src\GraphQL.Client.Abstractions\obj\Debug\netstandard2.0\GraphQL.Client.Abstractions.xml
+C:\Repos\Comparisonful\src\GraphQL.Client.Abstractions\bin\Debug\netstandard2.0\GraphQL.Client.Abstractions.deps.json
+C:\Repos\Comparisonful\src\GraphQL.Client.Abstractions\bin\Debug\netstandard2.0\GraphQL.Client.Abstractions.dll
+C:\Repos\Comparisonful\src\GraphQL.Client.Abstractions\bin\Debug\netstandard2.0\GraphQL.Client.Abstractions.xml
+C:\Repos\Comparisonful\src\GraphQL.Client.Abstractions\bin\Debug\netstandard2.0\GraphQL.Primitives.dll
+C:\Repos\Comparisonful\src\GraphQL.Client.Abstractions\bin\Debug\netstandard2.0\GraphQL.Primitives.xml
+C:\Repos\Comparisonful\src\GraphQL.Client.Abstractions\obj\Debug\netstandard2.0\GraphQL.Client.Abstractions.csproj.AssemblyReference.cache
+C:\Repos\Comparisonful\src\GraphQL.Client.Abstractions\obj\Debug\netstandard2.0\GraphQL.Client.Abstractions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repos\Comparisonful\src\GraphQL.Client.Abstractions\obj\Debug\netstandard2.0\GraphQL.Client.Abstractions.AssemblyInfoInputs.cache
+C:\Repos\Comparisonful\src\GraphQL.Client.Abstractions\obj\Debug\netstandard2.0\GraphQL.Client.Abstractions.AssemblyInfo.cs
+C:\Repos\Comparisonful\src\GraphQL.Client.Abstractions\obj\Debug\netstandard2.0\GraphQL.Client.Abstractions.csproj.CoreCompileInputs.cache
+C:\Repos\Comparisonful\src\GraphQL.Client.Abstractions\obj\Debug\netstandard2.0\GraphQL.Client.Abstractions.sourcelink.json
+C:\Repos\Comparisonful\src\GraphQL.Client.Abstractions\obj\Debug\netstandard2.0\GraphQL.Client.Abstractions.csproj.CopyComplete
+C:\Repos\Comparisonful\src\GraphQL.Client.Abstractions\obj\Debug\netstandard2.0\GraphQL.Client.Abstractions.dll
+C:\Repos\Comparisonful\src\GraphQL.Client.Abstractions\obj\Debug\netstandard2.0\GraphQL.Client.Abstractions.xml

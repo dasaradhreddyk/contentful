@@ -1,0 +1,26 @@
+
+
+
+
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="forecasts">
+  <thead>
+    <tr>
+      <th>FieldName</th>
+      <th>FieldValue</th>
+      <th>FundName</th>
+      <th>Environment</th>
+      <th>CollectionName</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let forecast of forecasts">
+      <td>{{ forecast.FieldName }}</td>
+      <td>{{ forecast.FieldValue }}</td>
+      <td>{{ forecast.FundName }}</td>
+      <td>{{ forecast.Environment }}</td>
+      <td>{{ forecast.CollectionName }}</td>
+      
+    </tr>
+  </tbody>
+</table>

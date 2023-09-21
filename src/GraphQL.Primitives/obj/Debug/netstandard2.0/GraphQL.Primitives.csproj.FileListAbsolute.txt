@@ -31,3 +31,14 @@ C:\Repos\src\GraphQL.Primitives\obj\Debug\netstandard2.0\GraphQL.Primitives.cspr
 C:\Repos\src\GraphQL.Primitives\obj\Debug\netstandard2.0\GraphQL.Primitives.sourcelink.json
 C:\Repos\src\GraphQL.Primitives\obj\Debug\netstandard2.0\GraphQL.Primitives.dll
 C:\Repos\src\GraphQL.Primitives\obj\Debug\netstandard2.0\GraphQL.Primitives.xml
+C:\Repos\Comparisonful\src\GraphQL.Primitives\bin\Debug\netstandard2.0\GraphQL.Primitives.deps.json
+C:\Repos\Comparisonful\src\GraphQL.Primitives\bin\Debug\netstandard2.0\GraphQL.Primitives.dll
+C:\Repos\Comparisonful\src\GraphQL.Primitives\bin\Debug\netstandard2.0\GraphQL.Primitives.xml
+C:\Repos\Comparisonful\src\GraphQL.Primitives\obj\Debug\netstandard2.0\GraphQL.Primitives.csproj.AssemblyReference.cache
+C:\Repos\Comparisonful\src\GraphQL.Primitives\obj\Debug\netstandard2.0\GraphQL.Primitives.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repos\Comparisonful\src\GraphQL.Primitives\obj\Debug\netstandard2.0\GraphQL.Primitives.AssemblyInfoInputs.cache
+C:\Repos\Comparisonful\src\GraphQL.Primitives\obj\Debug\netstandard2.0\GraphQL.Primitives.AssemblyInfo.cs
+C:\Repos\Comparisonful\src\GraphQL.Primitives\obj\Debug\netstandard2.0\GraphQL.Primitives.csproj.CoreCompileInputs.cache
+C:\Repos\Comparisonful\src\GraphQL.Primitives\obj\Debug\netstandard2.0\GraphQL.Primitives.sourcelink.json
+C:\Repos\Comparisonful\src\GraphQL.Primitives\obj\Debug\netstandard2.0\GraphQL.Primitives.dll
+C:\Repos\Comparisonful\src\GraphQL.Primitives\obj\Debug\netstandard2.0\GraphQL.Primitives.xml
